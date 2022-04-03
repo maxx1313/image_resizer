@@ -19,13 +19,13 @@ print(intro)
 
 image_file = input('Enter image path or drag in the image: ')
 image_file_extension = pathlib.Path(image_file).suffix
-error_text_file = colored('File type not supported. Try again...', 'red', attrs=['reverse'])
+error_text_file = colored('File type not supported. Try again...', 'red')
 while not image_file.endswith(('.jpg', 'jpeg', '.png')):
     print(error_text_file)
     image_file = input('Enter image path or drag in the image: ')
 
 save_to = input('Save to: ')
-error_text_save_to = colored("""Path needs to end with "/" Try again...""", 'red', attrs=['reverse'])
+error_text_save_to = colored("""Path needs to end with "/" Try again...""", 'red')
 while not save_to.endswith('/'):
     print(error_text_save_to)
     save_to = input('Save to: ')
@@ -33,7 +33,7 @@ while not save_to.endswith('/'):
 file_name = input('File_name: ')
 file_name_extension = pathlib.Path(file_name).suffix
 test = file_name_extension != image_file_extension
-error_file_name = colored('The file extension has to be the same. Try again...', 'red', attrs=['reverse'])
+error_file_name = colored('The file extension has to be the same. Try again...', 'red')
 while test:
     print(error_file_name)
     file_name = input('File_name: ')
